@@ -1,0 +1,5 @@
+# Run a basic scan and append to file
+nmap -v 192.168.56.101 | tee nmap_scan_results.txt
+
+# Run a service/version scan and append (so you have multiple sections)
+sudo nmap -sV 192.168.56.101 | tee -a nmap_scan_results.txt

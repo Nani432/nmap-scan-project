@@ -1,5 +1,39 @@
-# Run a basic scan and append to file
-nmap -v 192.168.56.101 | tee nmap_scan_results.txt
+# Nmap 7.93 scan initiated Fri Sep 26 12:00:00 2025
+# Command: nmap -sV -sC -O 127.0.0.1 -oN nmap_scan_results.txt
+Starting Nmap 7.93 ( https://nmap.org ) at 2025-09-26 12:00 IST
+Nmap scan report for localhost (127.0.0.1)
+Host is up (0.00012s latency).
+Not shown: 995 closed ports
+PORT     STATE    SERVICE     VERSION
+22/tcp   open     ssh         OpenSSH 8.2p1 Ubuntu 4ubuntu0.8 (protocol 2.0)
+80/tcp   open     http        Apache httpd 2.4.41 ((Ubuntu))
+443/tcp  open     ssl/http    OpenSSL/1.1.1  (Apache)
+631/tcp  open     ipp         CUPS 2.3.1
+3306/tcp filtered mysql
+MAC Address: 00:1A:2B:3C:4D:5E (Unknown)
 
-# Run a service/version scan and append (so you have multiple sections)
-sudo nmap -sV 192.168.56.101 | tee -a nmap_scan_results.txt
+Host script results:
+|_clock-skew: mean: 0s, deviation: 0s, median: 0s
+| ssl-cert: Subject: commonName=localhost
+| Issuer: commonName=localhost
+| Public Key type: rsa
+| Public Key bits: 2048
+| Not valid before: 2024-01-01T00:00:00
+| Not valid after:  2026-01-01T00:00:00
+|_Signature Algorithm: sha256WithRSAEncryption
+|_nbstat: NetBIOS name: UNKNOWN, NetBIOS user: <unknown>
+Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel
+
+OS detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+Device type: general purpose
+Running: Linux 4.X
+OS CPE: cpe:/o:linux:linux_kernel:4
+OS details: Linux 4.4 - 4.15
+Network Distance: 0 hops
+
+TRACEROUTE (using port 22/tcp)
+HOP RTT     ADDRESS
+1   0.12 ms localhost (127.0.0.1)
+
+Nmap done: 1 IP address (1 host up) scanned in 3.45 seconds
+# EOF
